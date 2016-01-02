@@ -1,0 +1,7 @@
+name: Admin-VS-OP
+main:
+author: "물외한인(Mohi)"
+version: "1.0"
+api:
+- 1.13.0
+- 2.0.0
