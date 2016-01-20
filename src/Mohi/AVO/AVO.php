@@ -13,6 +13,7 @@ use pocketmine\Player;
 class AVO extends PluginBase implements Listener {
 	private $adminList;
 	public function onEnable() {
+		@mkdir($this->getDataFolder());
 		$this->LoadAdminList ();
 		$this->getServer ()->getPluginManager ()->registerEvents ( $this, $this );
 	}
