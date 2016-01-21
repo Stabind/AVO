@@ -9,6 +9,7 @@ use pocketmine\utils\Config;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\Player;
+use pocketmine\utils\TextFormat;
 
 class AVO extends PluginBase implements Listener {
 	private $adminList;
@@ -39,15 +40,15 @@ class AVO extends PluginBase implements Listener {
 			$message = explode ( " ", $message );
 			if ($message [0] == "op") {
 				if (!$this->is_Admin($player)) {
-					$player->sendMessage('당신은 이 명령어을 실행할 권한이 없습니다.');
+					$player->sendMessage(TextFormat::RED.'당신은 이 명령어을 실행할 권한이 없습니다.');
 					$event->setCancelled();
 				}
 			}
 		}
 	}
 	public function onCommand(CommandSender $sender, Command $command, $label, Array $args) {
-		if (strtolower ( $command == 'avo' )) {
-			if ($sender instanceof Player) {
+		if (strtolower ( $command) == 'avo') {
+			if (!$sender instanceof Player) {
 				$sender->sendMessage ( "이 명령어는 콘솔에서만 사용하실 수 있습니다." );
 				return true;
 			}
