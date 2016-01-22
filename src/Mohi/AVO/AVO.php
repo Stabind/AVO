@@ -47,7 +47,7 @@ class AVO extends PluginBase implements Listener {
 		}
 	}
 	public function onCommand(CommandSender $sender, Command $command, $label, Array $args) {
-		if (strtolower ( $command) == 'avo') {
+		if (strtolower ( $command == 'avo') {
 			if (!$sender instanceof Player) {
 				$sender->sendMessage ( "이 명령어는 콘솔에서만 사용하실 수 있습니다." );
 				return true;
